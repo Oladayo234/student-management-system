@@ -1,0 +1,11 @@
+user_input = input("Enter a number: ")
+
+for number in user_input:
+ 
+    print(number,end="       ")
+
+    
+
+    
+
+   
