@@ -30,10 +30,12 @@ public class PizzaStore{
 
 
     Scanner input = new Scanner(System.in);
+
+    System.out.println("Enter pizza type; ");
+    String pizzaType = input.nextLine().toLowerCase();
     System.out.println("Enter number of guest; ");
     int numberOfGuest = input.nextInt();
-    System.out.println("Enter pizza type; ");
-    String pizzaType = input.next().toLowerCase();
+
     int numberOfSlices = 0;
     int pricePerBox = 0;
 

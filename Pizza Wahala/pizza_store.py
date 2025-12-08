@@ -29,13 +29,6 @@ print("""
 number_of_guest = int(input("Enter number of guest: "))
 pizza_type = input("Enter pizza type: ").lower().strip()
 
-#number_of_slices= 0
-#price_per_box = 1
-#number_of_boxes = 1
-#remainder = 1
-#price = 1
-#total = 1
-
 if pizza_type == "sapa size":
     number_of_slices = 4
     price_per_box = 2000
