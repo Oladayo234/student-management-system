@@ -62,12 +62,4 @@ class Student:
         else:
             self.__phone_number = phone_number
 
-    def __str__(self):
-        return (f"Student ID: {self.__student_id}, "
-                f"Name: {self.__name}, "
-                f"Age: {self.__age}, "
-                f"Gender: {self.__gender}, "
-                f"Email: {self.__email}, "
-                f"Phone: {self.__phone_number}")
-
 
