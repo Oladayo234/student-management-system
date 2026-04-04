@@ -1,0 +1,6 @@
+from app.exceptions.user_not_found_exception import UserNotFoundException
+from app.exceptions.course_not_found_exception import CourseNotFoundException
+from app.exceptions.enrollment_not_found_exception import EnrollmentNotFoundException
+from app.exceptions.duplicate_enrollment_exception import DuplicateEnrollmentException
+from app.exceptions.unauthorized_role_exception import UnauthorizedRoleException
+from app.exceptions.duplicate_email_exception import DuplicateEmailException
