@@ -1,4 +1,5 @@
 import code
+from datetime import datetime
 
 
 class Course:
@@ -7,3 +8,4 @@ class Course:
         self.__description = description
         self.__code = code
         self.__facilitator_id = facilitator_id
+        self.__created_at = datetime.now()

@@ -40,3 +40,9 @@ async def edit_course(course_id: str, course: dict):
     if inspect.isawaitable(result):
         result = await result
     return result
+
+async def find_by_code(code: str):
+    result = get_db()["courses"].find_one({"code": code})
+    if inspect.isawaitable(result):
+        result = await result
+    return result

@@ -5,28 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82ea3fbb-b02a-4eec-a0cf-ce8aeb068b14" name="Changes" comment="student management system">
-      <change afterPath="$PROJECT_DIR$/app/models/grade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/requests/grade_assignment_request.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/admin_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/exceptions/duplicate_course_code_exception.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routes/admin_routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/exceptions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/exceptions/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/exceptions/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/exceptions/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/course.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/course.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/role.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/role.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/repositories/course_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/course_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/enrollment_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/enrollment_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/course_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/course_routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/enrollment_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/enrollment_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/requests/grade_assign_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/requests/grade_assign_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/user_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/user_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/requests/course_create_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/requests/course_create_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/requests/enrollment_create_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/requests/enrollment_create_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/responses/course_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/responses/course_response.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemas/responses/enrollment_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/responses/enrollment_response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/responses/user_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/responses/user_response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/admin_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/admin_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/course_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/course_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/enrollment_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/enrollment_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/user_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_course.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_enrollment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/validators.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775545934177</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="student management system">
+      <option name="closed" value="true" />
+      <created>1775671936724</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775671936724</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

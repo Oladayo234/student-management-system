@@ -1,12 +1,9 @@
 from datetime import datetime
 from app.repositories import user_repository
-from app.models.admin import Admin
-from app.models.student import Student
-from app.models.facilitator import Facilitator
 from app.models.role import Role
 from app.schemas.requests.user_create_request import UserCreateRequest
 from app.schemas.responses.user_response import UserResponse
-from app.exceptions import (UserNotFoundException, DuplicateEmailException, UnauthorizedRoleException)
+from app.exceptions import (DuplicateEmailException)
 from app.utils.validators import validate_user_exists_by_id, validate_user_has_role
 
 async def create_admin(request: UserCreateRequest):
@@ -14,7 +11,6 @@ async def create_admin(request: UserCreateRequest):
     if existing:
         raise DuplicateEmailException()
 
-    admin = Admin(request.name, request.email)
     new_admin = request.model_dump()
     new_admin["created_at"] = datetime.now()
 
@@ -23,8 +19,7 @@ async def create_admin(request: UserCreateRequest):
         id=str(inserted_id),
         name=request.name,
         email=request.email,
-        role=request.role,
-        created_at=new_admin["created_at"]
+        role=request.role
     )
 
 async def create_student(admin_id: str, request: UserCreateRequest):
@@ -35,7 +30,6 @@ async def create_student(admin_id: str, request: UserCreateRequest):
     if existing:
         raise DuplicateEmailException()
 
-    student = Student(request.name, request.email)
     student_dict = request.model_dump()
     student_dict["created_at"] = datetime.now()
 
@@ -44,8 +38,7 @@ async def create_student(admin_id: str, request: UserCreateRequest):
         id=str(inserted_id),
         name=request.name,
         email=request.email,
-        role=Role.STUDENT,
-        created_at=student_dict["created_at"]
+        role=request.role
     )
 
 async def create_facilitator(admin_id: str, request: UserCreateRequest):
@@ -56,7 +49,6 @@ async def create_facilitator(admin_id: str, request: UserCreateRequest):
     if existing:
         raise DuplicateEmailException()
 
-    facilitator = Facilitator(request.name, request.email)
     facilitator_dict = request.model_dump()
     facilitator_dict["created_at"] = datetime.now()
 
@@ -65,8 +57,7 @@ async def create_facilitator(admin_id: str, request: UserCreateRequest):
         id=str(inserted_id),
         name=request.name,
         email=request.email,
-        role=Role.FACILITATOR,
-        created_at=facilitator_dict["created_at"]
+        role=Role.FACILITATOR
     )
 
 async def delete_student(admin_id: str, student_id: str):

@@ -1,10 +1,5 @@
 from app.repositories import user_repository, course_repository, enrollment_repository
-from app.exceptions import (
-    UserNotFoundException,
-    CourseNotFoundException,
-    DuplicateEnrollmentException,
-    UnauthorizedRoleException
-)
+from app.exceptions import (UserNotFoundException, CourseNotFoundException, DuplicateEnrollmentException, UnauthorizedRoleException)
 
 async def validate_user_exists_by_id(user_id: str, label: str = "User"):
     user = await user_repository.find_by_id(user_id)

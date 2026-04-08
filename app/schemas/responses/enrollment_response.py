@@ -9,4 +9,3 @@ class EnrollmentResponse(BaseModel):
     course_id: str
     score: Optional[int] = None
     grade: Optional[Grade] = None
-    created_at: datetime
