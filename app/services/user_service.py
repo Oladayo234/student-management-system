@@ -16,11 +16,7 @@ async def create_user(request: UserCreateRequest):
     else:
         user = Facilitator(request.name, request.email)
 
-    user_dict = {
-        "name": request.name,
-        "email": request.email,
-        "role": request.role.value
-    }
+    user_dict = request.model_dump()
 
     inserted_id = await user_repository.save(user_dict)
     return UserResponse(
@@ -41,3 +37,4 @@ async def get_user(user_id: str):
         email=user["email"],
         role=user["role"]
     )
+

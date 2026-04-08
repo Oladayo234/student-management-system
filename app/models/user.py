@@ -1,3 +1,4 @@
+from datetime import datetime
 from app.models.role import Role
 
 class User:
@@ -5,3 +6,4 @@ class User:
         self.__name = name
         self.__email = email
         self.__role = role
+        self.__created_at = datetime.now()

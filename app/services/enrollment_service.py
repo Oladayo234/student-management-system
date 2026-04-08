@@ -3,6 +3,8 @@ from app.schemas.requests.enrollment_create_request import EnrollmentCreateReque
 from app.schemas.requests.grade_assign_request import GradeAssignRequest
 from app.schemas.responses.enrollment_response import EnrollmentResponse
 from app.exceptions import UserNotFoundException, CourseNotFoundException, DuplicateEnrollmentException, UnauthorizedRoleException
+from app.utils.grade_calculator import calculate_grade
+
 
 async def enroll_student(request: EnrollmentCreateRequest):
     student = await user_repository.find_by_id(request.student_id)
@@ -21,11 +23,7 @@ async def enroll_student(request: EnrollmentCreateRequest):
     if existing:
         raise DuplicateEnrollmentException()
 
-    enrollment = {
-        "student_id": request.student_id,
-        "course_id": request.course_id,
-        "grade": None
-    }
+    enrollment = request.model_dump()
 
     inserted_id = await enrollment_repository.save(enrollment)
     return EnrollmentResponse(
@@ -35,7 +33,7 @@ async def enroll_student(request: EnrollmentCreateRequest):
         grade=None
     )
 
-async def get_student_courses(student_id: str):
+async def get_student_by_courses(student_id: str):
     enrollments = await enrollment_repository.find_by_student_id(student_id)
     result = []
     for enrollment in enrollments:
@@ -47,7 +45,7 @@ async def get_student_courses(student_id: str):
         ))
     return result
 
-async def get_course_students(course_id: str):
+async def get_course_by_students(course_id: str):
     enrollments = await enrollment_repository.find_by_course_id(course_id)
     result = []
     for enrollment in enrollments:
@@ -60,5 +58,6 @@ async def get_course_students(course_id: str):
     return result
 
 async def assign_grade(enrollment_id: str, request: GradeAssignRequest):
-    await enrollment_repository.update_grade(enrollment_id, request.grade)
-    return {"message": "Grade assigned successfully"}
+    grade = calculate_grade(request.score)
+    await enrollment_repository.update_grade(enrollment_id, request.score, grade.value)
+    return {"message": "Grade assigned successfully", "score": request.score, "grade": grade.value}

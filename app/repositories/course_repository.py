@@ -19,3 +19,24 @@ async def find_all():
     if hasattr(cursor, 'to_list'):
         return await cursor.to_list(100)
     return list(cursor)
+
+async def delete_by_id(course_id: str):
+    result = get_db()["courses"].delete_one({"_id": ObjectId(course_id)})
+    if inspect.isawaitable(result):
+        result = await result
+    return result
+
+async def delete_all():
+    result = get_db()["courses"].delete_many({})
+    if inspect.isawaitable(result):
+        result = await result
+    return result
+
+async def edit_course(course_id: str, course: dict):
+    result = get_db()["courses"].update_one(
+        {"_id": ObjectId(course_id)},
+        {"$set": course}
+    )
+    if inspect.isawaitable(result):
+        result = await result
+    return result

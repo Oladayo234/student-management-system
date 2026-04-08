@@ -2,6 +2,9 @@ from bson import ObjectId
 from app.database import get_db
 import inspect
 
+from app.schemas.requests.grade_assign_request import GradeAssignRequest
+from app.utils.grade_calculator import calculate_grade
+
 async def save(enrollment: dict):
     result = get_db()["enrollments"].insert_one(enrollment)
     if inspect.isawaitable(result):
@@ -29,10 +32,11 @@ async def find_by_student_and_course(student_id: str, course_id: str):
         result = await result
     return result
 
-async def update_grade(enrollment_id: str, grade: str):
+async def update_grade(enrollment_id: str, score: int, grade: str):
     result = get_db()["enrollments"].update_one(
         {"_id": ObjectId(enrollment_id)},
-        {"$set": {"grade": grade}}
+        {"$set": {"score": score, "grade": grade}}
     )
     if inspect.isawaitable(result):
-        await result
+        result = await result
+    return result
