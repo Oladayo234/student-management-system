@@ -3,10 +3,13 @@ from app.repositories import user_repository
 from app.models.role import Role
 from app.schemas.requests.user_create_request import UserCreateRequest
 from app.schemas.responses.user_response import UserResponse
-from app.exceptions import (DuplicateEmailException)
+from app.exceptions import DuplicateEmailException, UnauthorizedRoleException
 from app.utils.validators import validate_user_exists_by_id, validate_user_has_role
 
 async def create_admin(request: UserCreateRequest):
+    if request.role != Role.ADMIN:
+        raise UnauthorizedRoleException("This endpoint only creates admins")
+
     existing = await user_repository.find_by_email(request.email)
     if existing:
         raise DuplicateEmailException()
@@ -19,12 +22,15 @@ async def create_admin(request: UserCreateRequest):
         id=str(inserted_id),
         name=request.name,
         email=request.email,
-        role=request.role
+        role=Role.ADMIN
     )
 
 async def create_student(admin_id: str, request: UserCreateRequest):
     admin = await validate_user_exists_by_id(admin_id, "Admin")
     await validate_user_has_role(admin, "admin")
+
+    if request.role != Role.STUDENT:
+        raise UnauthorizedRoleException("This endpoint only creates students")
 
     existing = await user_repository.find_by_email(request.email)
     if existing:
@@ -38,12 +44,15 @@ async def create_student(admin_id: str, request: UserCreateRequest):
         id=str(inserted_id),
         name=request.name,
         email=request.email,
-        role=request.role
+        role=Role.STUDENT
     )
 
 async def create_facilitator(admin_id: str, request: UserCreateRequest):
     admin = await validate_user_exists_by_id(admin_id, "Admin")
     await validate_user_has_role(admin, "admin")
+
+    if request.role != Role.FACILITATOR:
+        raise UnauthorizedRoleException("This endpoint only creates facilitators")
 
     existing = await user_repository.find_by_email(request.email)
     if existing:

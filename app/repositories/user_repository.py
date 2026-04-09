@@ -1,6 +1,8 @@
 import inspect
 
 from bson import ObjectId
+from bson.errors import InvalidId
+
 from app.database import get_db
 
 async def save(user: dict):
@@ -10,10 +12,14 @@ async def save(user: dict):
     return result.inserted_id
 
 async def find_by_id(user_id: str):
-    result = get_db()["users"].find_one({"_id": ObjectId(user_id)})
-    if inspect.isawaitable(result):
-        result = await result
-    return result
+    try:
+        result = get_db()["users"].find_one({"_id": ObjectId(user_id)})
+        if inspect.isawaitable(result):
+            result = await result
+        return result
+    except InvalidId:
+        return None
+
 
 async def find_by_email(email: str):
     result = get_db()["users"].find_one({"email": email})

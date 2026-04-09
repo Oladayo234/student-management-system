@@ -5,27 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82ea3fbb-b02a-4eec-a0cf-ce8aeb068b14" name="Changes" comment="student management system">
-      <change afterPath="$PROJECT_DIR$/app/exceptions/duplicate_course_code_exception.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/admin_routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/exceptions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/exceptions/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/exceptions/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/exceptions/handlers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/course.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/course.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/course_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/course_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/course_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/course_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/enrollment_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/enrollment_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/user_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/user_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/user_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemas/requests/course_create_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/requests/course_create_request.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemas/requests/enrollment_create_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/requests/enrollment_create_request.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/responses/course_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/responses/course_response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/responses/enrollment_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/responses/enrollment_response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/responses/user_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/responses/user_response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/requests/grade_assignment_request.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/requests/user_create_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/requests/user_create_request.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/admin_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/admin_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/course_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/course_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/enrollment_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/enrollment_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/user_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/validators.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,32 +61,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.pytest in tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python.course_service.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/semi/Documents/Semicolon/PYTHON/Pycharm/student_course_system&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.pytest in tests.executor": "Run",
+    "Python.admin_service.executor": "Run",
+    "Python.course_service.executor": "Run",
+    "Python.handlers.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/semi/Documents/Semicolon/PYTHON/Pycharm/student_course_system",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="pytest in /home/semi/Documents/Semicolon/PYTHON/Pycharm/student_course_system/tests" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="student_course_system" />
@@ -172,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775671936724</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="student management system">
+      <option name="closed" value="true" />
+      <created>1775676530600</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1775676530600</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

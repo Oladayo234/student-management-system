@@ -17,6 +17,7 @@ async def create_user(request: UserCreateRequest):
     user_dict["created_at"] = datetime.now()
 
     inserted_id = await user_repository.save(user_dict)
+
     return UserResponse(
         id=str(inserted_id),
         name=request.name,
